@@ -1,0 +1,13 @@
+{
+  "body-lines-max-length": true,
+  "capitalise-subject": true,
+  "change-type": true,
+  "imperative-mood": true,
+  "no-period": true,
+  "no-tag-in-body": true,
+  "pretty-tags": true,
+  "proper-paragraphs": true,
+  "signed-commits": true,
+  "single-space-colon": true,
+  "title-max-length": true
+}

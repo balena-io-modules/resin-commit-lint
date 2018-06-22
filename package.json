@@ -1,0 +1,24 @@
+{
+  "name": "resin-commit-linter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "resin-commit-lint": "index.js"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "capitano": "^1.7.4",
+    "js-yaml": "^3.12.0",
+    "lodash": "^4.17.10",
+    "parse-commit-message": "^1.1.2",
+    "yaml-js": "^0.2.3"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
