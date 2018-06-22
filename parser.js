@@ -19,7 +19,7 @@ const parse = (commitMessage) => {
     throw new Error('Invalid commit title: <prefix>: <subject>')
   }
 
-  const [prefix, subject] = parts.slice(1)
+  const [ prefix, subject ] = parts.slice(1)
 
   const commit = {
     prefix,
