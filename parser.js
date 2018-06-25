@@ -5,7 +5,7 @@ const parse = (commitMessage) => {
     throw new TypeError('`commitMessage` should be a string')
   }
 
-  const lines = commitMessage.trim().split('\n')
+  const lines = _.trimEnd(commitMessage).split('\n')
   const fullTitle = lines.shift()
   const footerStart = lines.lastIndexOf('')
   if (footerStart == -1) {

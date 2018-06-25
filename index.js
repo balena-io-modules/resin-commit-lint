@@ -80,7 +80,7 @@ generateErrorReport = (errors) => {
 }
 
 capitano.run(process.argv, (error) => {
-	if (error) {
+  if (error) {
     generateErrorReport(error)
   }
 })
