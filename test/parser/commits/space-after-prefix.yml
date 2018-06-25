@@ -1,1 +1,1 @@
-error: "Invalid commit title. Expected <prefix>: <subject>"
+error: "Expected : but \" \" found."

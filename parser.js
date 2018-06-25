@@ -1,36 +1,20 @@
 const _ = require('lodash')
+const peg = require('pegjs')
+const fs = require('fs')
+const path = require('path')
+const grammar = fs.readFileSync(path.join(__dirname, './grammar.pegjs'), 'utf8')
 
-const parse = (commitMessage) => {
-  if (typeof commitMessage !== 'string') {
-    throw new TypeError('`commitMessage` should be a string')
+// Workaround until pegjs is updated to ^0.11.0.
+// See https://github.com/pegjs/pegjs/issues/517
+const generateWithContext = (grammar, options) => {
+  let parser = peg.generate(grammar, options)
+  let parse = parser.parse
+  parser.parse = (input, opts) => {
+    return parse(input, _.merge({}, opts, options.defaultParseOptions || {}))
   }
-
-  const lines = _.trimEnd(commitMessage).split('\n')
-  const fullTitle = lines.shift()
-  const footerStart = lines.lastIndexOf('')
-  if (footerStart == -1) {
-    throw new Error('Could not parse commit: footers are mandatory and should be separated from the body with a newline')
-  }
-  const body = lines.slice(0, footerStart).join('\n')
-  const footers = lines.slice(footerStart + 1)
-  const parts = /^(\S+): (.+)$/.exec(fullTitle)
-  const message = body + '\n\n' + footers.join('\n')
-  if (!parts) {
-    throw new Error('Invalid commit title. Expected <prefix>: <subject>')
-  }
-
-  const [ prefix, subject ] = parts.slice(1)
-
-  const commit = {
-    prefix,
-    subject,
-    fullTitle,
-    body,
-    footers,
-    message
-  }
-
-  return commit
+  return parser
 }
 
-module.exports = { parse }
+const parser = generateWithContext(grammar, { defaultParseOptions: { _ } })
+
+module.exports.parse = parser.parse
