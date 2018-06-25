@@ -52,8 +52,7 @@ const parseAndRun = (params, options, done) => {
   try {
     commit = parse(params['commit-message'])
   } catch (e) {
-    console.error('Parse error:', e)
-    process.exit(1)
+    generateErrorReport([e])
   }
 
   const activeRules = readConfig(options.config || path.join(__dirname, 'config.json'))
@@ -77,11 +76,11 @@ generateErrorReport = (errors) => {
   _.forEach(errors, (error) => {
     console.error('Error:', error.message)
   })
+  process.exit(1)
 }
 
 capitano.run(process.argv, (error) => {
 	if (error) {
     generateErrorReport(error)
-    process.exit(1)
   }
 })

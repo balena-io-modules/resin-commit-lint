@@ -1,1 +1,1 @@
-error: "Invalid commit title: <prefix>: <subject>"
+error: "Invalid commit title. Expected <prefix>: <subject>"

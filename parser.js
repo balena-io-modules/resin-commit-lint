@@ -16,7 +16,7 @@ const parse = (commitMessage) => {
   const parts = /^(\S+): (.+)$/.exec(fullTitle)
   const message = body + '\n\n' + footers.join('\n')
   if (!parts) {
-    throw new Error('Invalid commit title: <prefix>: <subject>')
+    throw new Error('Invalid commit title. Expected <prefix>: <subject>')
   }
 
   const [ prefix, subject ] = parts.slice(1)
