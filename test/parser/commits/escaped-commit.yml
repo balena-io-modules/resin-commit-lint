@@ -1,0 +1,19 @@
+prefix: prefix
+subject: Subject
+fullTitle: 'prefix: Subject'
+body: |-
+  A body which may contain several paragraphs.
+
+  It must contain footers separated by a newline,
+  it may also contain special characters such as: "'[]<>
+footers:
+- 'Change-type: minor'
+- 'Signed-off-by: foobar <foobar@resin.io>'
+message: |-
+  A body which may contain several paragraphs.
+
+  It must contain footers separated by a newline,
+  it may also contain special characters such as: "'[]<>
+
+  Change-type: minor
+  Signed-off-by: foobar <foobar@resin.io>

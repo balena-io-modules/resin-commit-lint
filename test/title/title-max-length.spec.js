@@ -1,9 +1,13 @@
 const ava = require('ava')
 const rules = require('../../rules')
 
-const validTitle = { fullTitle: 'A'.repeat(72) }
-const invalidTitle = { fullTitle: 'A'.repeat(73) }
-const runTest = (t) => rules.titleMaxLength(t)
+const validTitle = {
+  fullTitle: 'A'.repeat(72)
+}
+const invalidTitle = {
+  fullTitle: 'A'.repeat(73)
+}
+const runTest = (test) => rules.titleMaxLength(test)
 
 ava.test('title-max-length: should accept valid title', (test) => {
   test.notThrows(() => runTest(validTitle))
