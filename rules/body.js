@@ -5,7 +5,7 @@ const {
   PROPER_PARAGRAPHS,
   PRETTY_TAGS,
   CHANGE_TYPE,
-  SIGNED_OFF,
+  SIGNED_COMMITS,
   SIGNATURE_LAST
 } = require('../lib/errors')
 
@@ -56,15 +56,15 @@ module.exports.signedCommits = (commit) => {
     return /^Signed-off-by: (.+) <(.+)>$/.test(footer)
   })
   if (!signedOffByFooter) {
-    throw SIGNED_OFF
+    throw SIGNED_COMMITS
   }
 }
 
 module.exports.signatureLast = (commit) => {
-  const signedOffByFooter = _.find(commit.footers, (footer) => {
+  const signatureIndex = _.findIndex(commit.footers, (footer) => {
     return /^Signed-off-by: (.+) <(.+)>$/.test(footer)
   })
-  if (signedOffByFooter && signedOffByFooter !== _.last(commit.footers)) {
+  if (signatureIndex === -1 || signatureIndex !== (commit.footers.length - 1)) {
     throw SIGNATURE_LAST
   }
 }
