@@ -7,6 +7,7 @@
   "no-tag-in-body": true,
   "pretty-tags": true,
   "proper-paragraphs": true,
+  "signature-last": true,
   "signed-commits": true,
   "single-space-colon": true,
   "title-max-length": true

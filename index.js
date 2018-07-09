@@ -1,37 +1,39 @@
 #!/usr/bin/env node
 
-const { parse } = require('./parser')
+const {
+  parse
+} = require('./lib/parser')
 const _ = require('lodash')
 const availableRules = require('./rules')
 const capitano = require('capitano')
 const fs = require('fs')
 const path = require('path')
-const errors = []
+const storedErrors = []
 
 const parseRule = (command) => {
   return _.map(command.split('-'), (word, index) => {
-    if (index !== 0) return word.charAt(0).toUpperCase().concat(word.slice(1));
-    return word;
+    if (index !== 0) return word.charAt(0).toUpperCase().concat(word.slice(1))
+    return word
   }).join('')
 }
 
 const runRules = (commit, activeRules, done) => {
   _.forEach(activeRules, (rule) => {
     const parsedRule = parseRule(rule)
-    if (!_.isFunction(availableRules[parsedRule])) {
-      throw new Error(`No available rule matching ${rule}`)
-    } else {
+    if (_.isFunction(availableRules[parsedRule])) {
       try {
         availableRules[parsedRule](commit)
       } catch (err) {
-        errors.push(err)
+        storedErrors.push(err)
       }
+    } else {
+      throw new Error(`No available rule matching ${rule}`)
     }
   })
-  if (_.isEmpty(errors)) {
+  if (_.isEmpty(storedErrors)) {
     done()
   } else {
-    done(errors)
+    done(storedErrors)
   }
 }
 
@@ -48,30 +50,32 @@ const readConfig = (configPath) => {
 }
 
 const parseAndRun = (params, options, done) => {
-  let commit
+  let commit = {}
   try {
     commit = parse(params['commit-message'])
-  } catch (e) {
-    generateErrorReport([e])
+  } catch (err) {
+    return generateErrorReport([ err ])
   }
 
-  const activeRules = readConfig(options.config || path.join(__dirname, 'config.json'))
+  const configPath = path.join(__dirname, 'config.json')
+  const activeRules = readConfig(options.config || configPath)
   return runRules(commit, activeRules, done)
 }
 
 capitano.command({
-  signature: '<|commit-message>',
+  signature: '<commit-message>',
+  // eslint-disable-next-line max-len
   description: 'Verifies the commit messagge according to the standard convention',
-  options: [{
+  options: [ {
     signature: 'config',
     parameter: 'config',
     description: 'A path to a config file to override the default',
-    alias: 'c',
-  }],
+    alias: 'c'
+  } ],
   action: parseAndRun
 })
 
-generateErrorReport = (errors) => {
+const generateErrorReport = (errors) => {
   console.error('Found the following errors:\n')
   _.forEach(errors, (error) => {
     console.error('Error:', error.message)
@@ -81,6 +85,7 @@ generateErrorReport = (errors) => {
 
 capitano.run(process.argv, (error) => {
   if (error) {
+    console.error(error)
     generateErrorReport(error)
   } else {
     console.log('Valid')

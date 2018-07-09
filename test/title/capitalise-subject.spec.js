@@ -1,9 +1,13 @@
 const ava = require('ava')
 const rules = require('../../rules')
 
-const validSubject = { subject: 'Subject' }
-const invalidSubject = { subject: 'subject' }
-const runTest = (t) => rules.capitaliseSubject(t)
+const validSubject = {
+  subject: 'Subject'
+}
+const invalidSubject = {
+  subject: 'subject'
+}
+const runTest = (test) => rules.capitaliseSubject(test)
 
 ava.test('capitalise-subject: should accept valid subject', (test) => {
   test.notThrows(() => runTest(validSubject))

@@ -1,5 +1,6 @@
 module.exports = {
-  VERB_BLACKLIST: [ 'adds', 'adding', 'added',
+  VERB_BLACKLIST: [
+    'adds', 'adding', 'added',
     'allows', 'allowing', 'allowed',
     'amends', 'amending', 'amended',
     'bumps', 'bumping', 'bumped',
@@ -56,6 +57,6 @@ module.exports = {
     'tests', 'testing', 'tested',
     'truncates', 'truncating', 'truncated',
     'updates', 'updating', 'updated',
-    'uses', 'using', 'used',
-  ],
-};
+    'uses', 'using', 'used'
+  ]
+}

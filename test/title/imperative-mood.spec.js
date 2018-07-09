@@ -1,9 +1,13 @@
 const ava = require('ava')
 const rules = require('../../rules')
 
-const validSubject = { subject: 'Add' }
-const invalidSubject = { subject: 'Added' }
-const runTest = (t) => rules.imperativeMood(t)
+const validSubject = {
+  subject: 'Add'
+}
+const invalidSubject = {
+  subject: 'Added'
+}
+const runTest = (test) => rules.imperativeMood(test)
 
 ava.test('imperative-mood: should accept valid subject', (test) => {
   test.notThrows(() => runTest(validSubject))
