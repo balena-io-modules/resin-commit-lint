@@ -1,6 +1,24 @@
 # resin-commit-lint
 
-A script to lint commit messages according to the rules defined in https://docs.google.com/document/d/1Lip9ZwMx5K-9k6-QFCeAu3tfDwR431fGtmTwq8bnC2o
+A script to lint commit messages, a valid commit starts with the title, which is
+made of a prefix, separated from the subject by a colon, the next lines may
+contain the body of the commit followed by the footers.
+
+Scroll to the Rules sections to learn about the specific rules, the default
+configuration can be found [here](https://github.com/resin-io/resin-commit-lint/blob/master/config.json)
+
+
+## Examples
+
+```
+prefix: Subject
+A body which may contain several paragraphs.
+
+It must contain footers separated by a newline
+
+Change-type: major
+Signed-off-by: Foo Bar <foobar@resin.io>
+```
 
 # Usage
 Takes the commit message as input and validates it according to the rules, you can pipe the input directly from `git show`.
@@ -11,6 +29,25 @@ git show $SHA -s --format=%B | resin-commit-lint
 
 You can override the [default configuration](https://github.com/resin-io/resin-commit-lint/blob/master/config.json) with the `-c` option
 
+# Tips
+You can configure `git` to help you follow these guidelines by creating a commit
+template. To enable this, simply add this to you `.gitconfig`
+
+```
+[commit]
+  template = path/to/your/template
+```
+
+You can customise your template according to your own needs, here is an example
+which you can use to build on:
+```
+prefix: Subject
+
+Commit body
+
+Change-type: patch|minor|major
+Signed-off-by: Fake Name <fakename@resin.io>
+```
 # Rules
 
 {{#identifiers}}
