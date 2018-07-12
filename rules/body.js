@@ -12,7 +12,7 @@ const {
 const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
 
 module.exports.bodyLinesMaxLength = (commit) => {
-  _.map(commit.message.split('\n'), (line) => {
+  _.map(commit.body.split('\n'), (line) => {
     if (line.length > 72) {
       throw BODY_LINES_MAX_LENGTH
     }
