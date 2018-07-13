@@ -11,7 +11,9 @@ _.each([
   'missing-footer',
   'space-after-prefix',
   'space-after-column',
-  'escaped-commit'
+  'escaped-commit',
+  'only-title',
+  'title-with-newline'
 ], (testName) => {
   const testCase = fs.readFileSync(`${__dirname}/commits/${testName}`, 'utf8')
   const expectedFile = fs.readFileSync(`${__dirname}/commits/${testName}.yml`,
