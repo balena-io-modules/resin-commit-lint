@@ -85,7 +85,6 @@ const generateErrorReport = (errors) => {
 
 capitano.run(process.argv, (error) => {
   if (error) {
-    console.error(error)
     generateErrorReport(error)
   } else {
     console.log('Valid')
