@@ -1,1 +1,1 @@
-error: "Expected : but \" \" found."
+error: "Expected : between prefix and subject in commit title but \" \" found."
