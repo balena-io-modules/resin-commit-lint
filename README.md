@@ -62,7 +62,10 @@ The first letter of any paragraph should be capitalised
 ### change-type
 Each commit must contain the following footer: Change-type: patch|minor|major
 
-### signed-off
+### change-type-fixed-spelling
+Change-type should follow this exact format (case-sensitive): Change-type: patch|minor|major
+
+### signed-commits
 Each commit must contain the following footer: Signed-off-by: Full Name &lt;email&gt;
 
 ### signature-last

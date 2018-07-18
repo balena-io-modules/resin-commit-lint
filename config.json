@@ -2,6 +2,7 @@
   "body-lines-max-length": true,
   "capitalise-subject": true,
   "change-type": false,
+  "change-type-fixed-spelling": true,
   "imperative-mood": true,
   "no-period": true,
   "no-tag-in-body": true,
