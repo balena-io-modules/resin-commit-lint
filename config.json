@@ -1,7 +1,7 @@
 {
   "body-lines-max-length": true,
   "capitalise-subject": true,
-  "change-type": true,
+  "change-type": false,
   "imperative-mood": true,
   "no-period": true,
   "no-tag-in-body": true,
