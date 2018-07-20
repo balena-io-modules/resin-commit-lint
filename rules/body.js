@@ -6,7 +6,8 @@ const {
   PRETTY_TAGS,
   CHANGE_TYPE,
   SIGNED_COMMITS,
-  SIGNATURE_LAST
+  SIGNATURE_LAST,
+  CHANGE_TYPE_FIXED_SPELLING
 } = require('../lib/errors')
 
 const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
@@ -66,5 +67,17 @@ module.exports.signatureLast = (commit) => {
   })
   if (signatureIndex === -1 || signatureIndex !== (commit.footers.length - 1)) {
     throw SIGNATURE_LAST
+  }
+}
+
+module.exports.changeTypeFixedSpelling = (commit) => {
+  const changeTypeFooter = _.find(commit.footers, (footer) => {
+    return /^Change-type:.+$/i.test(footer)
+  })
+
+  if (changeTypeFooter) {
+    if (!(/^Change-type: (patch|minor|major)$/.test(changeTypeFooter))) {
+      throw CHANGE_TYPE_FIXED_SPELLING
+    }
   }
 }
