@@ -1,6 +1,6 @@
-prefix: 'prefix '
-subject: subject
-fullTitle: 'prefix : subject'
+prefix: ''
+subject: 'simple title'
+fullTitle: 'simple title'
 body: body
 footers:
 - 'Footer: foo'

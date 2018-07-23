@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "npm run lint && nyc --reporter=lcov ava",
-    "readme": "jsdoc2md --template doc/README.hbs lib/errors.js > README.md",
+    "readme": "node doc/make-docs.js",
     "lint": "eslint lib test rules index.js"
   },
   "author": "Resin Inc. <hello@resin.io>",

@@ -3,20 +3,15 @@ const {
   parse
 } = require('../../lib/parser')
 const fs = require('fs')
+const path = require('path')
 const yaml = require('js-yaml')
 const _ = require('lodash')
 
-_.each([
-  'well-formed-commit',
-  'missing-footer',
-  'space-after-prefix',
-  'space-after-column',
-  'escaped-commit',
-  'only-title',
-  'title-with-newline',
-  'no-body',
-  'no-colon'
-], (testName) => {
+const tests = _.filter(fs.readdirSync(`${__dirname}/commits`), (filename) => {
+  return path.extname(filename) !== '.yml'
+})
+
+_.each(tests, (testName) => {
   const testCase = fs.readFileSync(`${__dirname}/commits/${testName}`, 'utf8')
   const expectedFile = fs.readFileSync(`${__dirname}/commits/${testName}.yml`,
     'utf8')
@@ -25,7 +20,7 @@ _.each([
   ava.test(testCase, (test) => {
     if (expected.error) {
       const error = test.throws(() => {
-        parse(testCase)
+        console.log(parse(testCase))
       })
       test.is(error.message, expected.error)
     } else {

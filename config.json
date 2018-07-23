@@ -1,11 +1,12 @@
 {
   "body-lines-max-length": true,
-  "capitalise-subject": true,
+  "capitalise-subject": "with-prefix",
   "change-type": false,
   "change-type-fixed-spelling": true,
   "imperative-mood": true,
   "no-period": true,
   "no-tag-in-body": true,
+  "no-whitespace-in-prefix": true,
   "pretty-tags": true,
   "proper-paragraphs": true,
   "signature-last": true,

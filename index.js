@@ -17,12 +17,15 @@ const parseRule = (command) => {
   }).join('')
 }
 
-const runRules = (commit, activeRules, done) => {
-  _.forEach(activeRules, (rule) => {
+const runRules = (commit, rulesConfig, done) => {
+  _.forEach(rulesConfig, (configuration, rule) => {
+    // Return early if rule is not active
+    if (!configuration) return
+
     const parsedRule = parseRule(rule)
     if (_.isFunction(availableRules[parsedRule])) {
       try {
-        availableRules[parsedRule](commit)
+        availableRules[parsedRule](commit, configuration)
       } catch (err) {
         storedErrors.push(err)
       }
@@ -58,8 +61,8 @@ const parseAndRun = (params, options, done) => {
   }
 
   const configPath = path.join(__dirname, 'config.json')
-  const activeRules = readConfig(options.config || configPath)
-  return runRules(commit, activeRules, done)
+  const rulesConfig = readConfig(options.config || configPath)
+  return runRules(commit, rulesConfig, done)
 }
 
 capitano.command({
