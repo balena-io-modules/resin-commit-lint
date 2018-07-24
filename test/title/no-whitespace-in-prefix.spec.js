@@ -14,7 +14,7 @@ const newlinePrefix = {
   prefix: 'prefix\n'
 }
 
-const runTest = (test) => rules.noWhiteSpaceInPrefix(test)
+const runTest = (test) => rules.noWhitespaceInPrefix(test)
 
 ava.test('no-whitespace-in-prefix: should accept valid prefix', (test) => {
   test.notThrows(() => runTest(validPrefix))
