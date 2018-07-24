@@ -1,7 +1,7 @@
 # resin-commit-lint
 
 A script to lint commit messages, a valid commit starts with the title, which is
-made of a prefix, separated from the subject by a colon, the next lines may
+made of an optional prefix, separated from the subject by a colon, the next lines may
 contain the body of the commit followed by the footers.
 
 Scroll to the Rules sections to learn about the specific rules, the default
@@ -17,6 +17,16 @@ A body which may contain several paragraphs.
 It must contain footers separated by a newline
 
 Change-type: major
+Signed-off-by: Foo Bar <foobar@resin.io>
+```
+
+Since the prefix is optional the following is also a valid commit
+
+```
+subject without prefix
+A body
+
+Change-type: minor
 Signed-off-by: Foo Bar <foobar@resin.io>
 ```
 
