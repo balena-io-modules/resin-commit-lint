@@ -17,10 +17,10 @@ _.each(tests, (testName) => {
     'utf8')
   const expected = yaml.safeLoad(expectedFile)
 
-  ava.test(testCase, (test) => {
+  ava.test(testName, (test) => {
     if (expected.error) {
       const error = test.throws(() => {
-        console.log(parse(testCase))
+        parse(testCase)
       })
       test.is(error.message, expected.error)
     } else {

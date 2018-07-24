@@ -4,6 +4,7 @@
   "change-type": false,
   "change-type-fixed-spelling": true,
   "imperative-mood": true,
+  "no-leading-space-in-subject": true,
   "no-period": true,
   "no-tag-in-body": true,
   "no-whitespace-in-prefix": true,
@@ -11,6 +12,5 @@
   "proper-paragraphs": true,
   "signature-last": true,
   "signed-commits": true,
-  "single-space-colon": true,
   "title-max-length": true
 }

@@ -5,7 +5,7 @@ const {
   CAPITALISE_SUBJECT,
   NO_PERIOD,
   NO_WHITESPACE_IN_PREFIX,
-  SINGLE_SPACE_COLON,
+  NO_LEADING_SPACE_IN_SUBJECT,
   IMPERATIVE_MOOD
 } = require('../lib/errors')
 
@@ -43,9 +43,9 @@ module.exports.noPeriod = (commit) => {
   }
 }
 
-module.exports.singleSpaceColon = (commit) => {
+module.exports.noLeadingSpaceInSubject = (commit) => {
   if (/^\s+/.test(commit.subject[0])) {
-    throw SINGLE_SPACE_COLON
+    throw NO_LEADING_SPACE_IN_SUBJECT
   }
 }
 
