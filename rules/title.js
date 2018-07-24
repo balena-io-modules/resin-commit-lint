@@ -4,6 +4,7 @@ const {
   TITLE_MAX_LENGTH,
   CAPITALISE_SUBJECT,
   NO_PERIOD,
+  NO_WHITESPACE_IN_PREFIX,
   SINGLE_SPACE_COLON,
   IMPERATIVE_MOOD
 } = require('../lib/errors')
@@ -14,9 +15,24 @@ module.exports.titleMaxLength = (commit) => {
   }
 }
 
-module.exports.capitaliseSubject = (commit) => {
-  if (commit.subject[0] !== commit.subject[0].toUpperCase()) {
-    throw CAPITALISE_SUBJECT
+module.exports.capitaliseSubject = (commit, config) => {
+  const validate = (subject) => {
+    if (subject[0] !== subject[0].toUpperCase()) {
+      throw CAPITALISE_SUBJECT
+    }
+  }
+  switch (config) {
+  case 'with-prefix':
+    if (commit.prefix === '') break
+    validate(commit.subject)
+    break
+  case 'always':
+    validate(commit.subject)
+    break
+  case 'never':
+    break
+  default:
+    throw new Error('Invalid configuration supplied to capitalise-subject')
   }
 }
 
@@ -37,5 +53,11 @@ module.exports.imperativeMood = (commit) => {
   const firstWord = commit.subject.split(' ')[0]
   if (_.find(VERB_BLACKLIST, (word) => word === firstWord.toLowerCase())) {
     throw IMPERATIVE_MOOD
+  }
+}
+
+module.exports.noWhiteSpaceInPrefix = (commit) => {
+  if (/\s/.test(commit.prefix)) {
+    throw NO_WHITESPACE_IN_PREFIX
   }
 }

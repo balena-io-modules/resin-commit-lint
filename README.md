@@ -1,7 +1,7 @@
 # resin-commit-lint
 
 A script to lint commit messages, a valid commit starts with the title, which is
-made of a prefix, separated from the subject by a colon, the next lines may
+made of an optional prefix, separated from the subject by a colon, the next lines may
 contain the body of the commit followed by the footers.
 
 Scroll to the Rules sections to learn about the specific rules, the default
@@ -17,6 +17,16 @@ A body which may contain several paragraphs.
 It must contain footers separated by a newline
 
 Change-type: major
+Signed-off-by: Foo Bar <foobar@resin.io>
+```
+
+Since the prefix is optional the following is also a valid commit
+
+```
+subject without prefix
+A body
+
+Change-type: minor
 Signed-off-by: Foo Bar <foobar@resin.io>
 ```
 
@@ -51,41 +61,77 @@ Signed-off-by: Fake Name <fakename@resin.io>
 # Rules
 
 ### body-lines-max-length
+*Default: true*
+
 No line in the body should exceed 72 character
 
 ### no-tag-in-body
+*Default: true*
+
 Commit body should not contain footer tags
 
+### no-whitespace-in-prefix
+*Default: true*
+
+Prefix should not contain any whitespace
+
 ### proper-paragraphs
+*Default: true*
+
 The first letter of any paragraph should be capitalised
 
 ### change-type
+*Default: false*
+
 Each commit must contain the following footer: Change-type: patch|minor|major
 
 ### change-type-fixed-spelling
+*Default: true*
+
 Change-type should follow this exact format (case-sensitive): Change-type: patch|minor|major
 
 ### signed-commits
+*Default: true*
+
 Each commit must contain the following footer: Signed-off-by: Full Name &lt;email&gt;
 
 ### signature-last
+*Default: true*
+
 Signed-off-by must be the last tag appearing in the footers
 
 ### title-max-length
+*Default: true*
+
 The commit title should not exceed 72 characters
 
 ### capitalise-subject
+*Default: with-prefix*
+
 The commit subject must start with a capital letter
 
+Accepts the following values:
+- *never*: Rule is never applied
+- *always*: Rule is always applied
+- *with-prefix*: Rule is only applied if a valid prefix is supplied
+
 ### no-period
+*Default: true*
+
 The commit title should not end with a period
 
 ### single-space-colon
+*Default: true*
+
 The commit title must include exactly one space after the colon
 
 ### imperative-mood
+*Default: true*
+
 The commit subject must use the imperative mood
 
 ### pretty-tags
+*Default: true*
+
 Tag names must start with a capital letter, only letters and &#x27;-&#x27; are allowed
 
