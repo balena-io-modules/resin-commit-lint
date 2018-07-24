@@ -42,14 +42,7 @@ const runRules = (commit, rulesConfig, done) => {
 
 const readConfig = (configPath) => {
   const configFile = fs.readFileSync(configPath, 'utf8')
-  const config = JSON.parse(configFile)
-
-  return _.reduce(config, (acc, val, key) => {
-    if (val === true) {
-      acc.push(key)
-    }
-    return acc
-  }, [])
+  return JSON.parse(configFile)
 }
 
 const parseAndRun = (params, options, done) => {

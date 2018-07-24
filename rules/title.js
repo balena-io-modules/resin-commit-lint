@@ -56,7 +56,7 @@ module.exports.imperativeMood = (commit) => {
   }
 }
 
-module.exports.noWhiteSpaceInPrefix = (commit) => {
+module.exports.noWhitespaceInPrefix = (commit) => {
   if (/\s/.test(commit.prefix)) {
     throw NO_WHITESPACE_IN_PREFIX
   }
