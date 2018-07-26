@@ -1,0 +1,15 @@
+prefix: prefix
+subject: ' subject'
+fullTitle: 'prefix:  subject'
+body: body
+message: |-
+  body
+
+  Footer: foo
+footers:
+- 'Footer: foo'
+
+errors:
+- 'The commit subject must not start with a leading space'
+- 'Signed-off-by must be the last tag appearing in the footers'
+- 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'
