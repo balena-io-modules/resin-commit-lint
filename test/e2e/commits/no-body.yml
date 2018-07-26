@@ -4,7 +4,7 @@ footers:
   - 'Signed-off-by: foobar <foobar@resin.io>'
 fullTitle: 'prefix: Subject'
 message: |-
-  
+
   Change-type: minor
   Signed-off-by: foobar <foobar@resin.io>
 prefix: 'prefix'

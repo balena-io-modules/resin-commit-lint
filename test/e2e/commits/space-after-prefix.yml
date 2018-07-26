@@ -1,0 +1,16 @@
+prefix: 'prefix '
+subject: subject
+fullTitle: 'prefix : subject'
+body: body
+footers:
+- 'Footer: foo'
+message: |-
+  body
+
+  Footer: foo
+
+errors:
+  - 'The commit subject must start with a capital letter'
+  - 'Prefix should not contain any whitespace'
+  - 'Signed-off-by must be the last tag appearing in the footers'
+  - 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'
