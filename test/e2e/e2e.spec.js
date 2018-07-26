@@ -39,10 +39,10 @@ _.each(tests, (testName) => {
 
       const defaultConfig = readConfig(getDefaultConfigPath())
       runRules(parseResult, defaultConfig, (errs) => {
-        const errorMessages = _.map(errs, (err) => {
-          return err.message
-        })
-        if (expected.errors) {
+        if (errs) {
+          const errorMessages = _.map(errs, (err) => {
+            return err.message
+          })
           test.deepEqual(errorMessages, expected.errors)
         }
       })

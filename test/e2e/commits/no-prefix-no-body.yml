@@ -9,5 +9,4 @@ message: |-
   Footer: foo
 
 errors:
-- 'Signed-off-by must be the last tag appearing in the footers'
 - 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'

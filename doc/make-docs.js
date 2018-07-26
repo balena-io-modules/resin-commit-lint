@@ -19,7 +19,7 @@ const templateData = jsdoc2md.getTemplateDataSync({
 })
 
 const readme = jsdoc2md.renderSync({
-  data: templateData,
+  data: _.sortBy(templateData, 'id'),
   template: template
 })
 
