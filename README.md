@@ -1,8 +1,9 @@
 # resin-commit-lint
 
-A script to lint commit messages, a valid commit starts with the title, which is
-made of an optional prefix, separated from the subject by a colon, the next lines may
-contain the body of the commit followed by the footers.
+A script to lint commit messages.
+A valid commit starts with the title, which is made of an optional prefix,
+separated from the subject by a colon; the next lines may contain the body of
+the commit followed by the footers.
 
 Scroll to the Rules sections to learn about the specific rules, the default
 configuration can be found [here](https://github.com/resin-io/resin-commit-lint/blob/master/config.json)
@@ -12,6 +13,7 @@ configuration can be found [here](https://github.com/resin-io/resin-commit-lint/
 
 ```
 prefix: Subject
+
 A body which may contain several paragraphs.
 
 It must contain footers separated by a newline
@@ -24,6 +26,7 @@ Since the prefix is optional the following is also a valid commit
 
 ```
 subject without prefix
+
 A body
 
 Change-type: minor
@@ -31,10 +34,11 @@ Signed-off-by: Foo Bar <foobar@resin.io>
 ```
 
 # Usage
-Takes the commit message as input and validates it according to the rules, you can pipe the input directly from `git show`.
+Takes the commit message as input and validates it according to the rules.
 
 ```
-git show $SHA -s --format=%B | resin-commit-lint
+commit=$(git show $SHA -s --format=%B)
+resin-commit-lint "${commit}"
 ```
 
 You can override the [default configuration](https://github.com/resin-io/resin-commit-lint/blob/master/config.json) with the `-c` option
@@ -56,7 +60,7 @@ prefix: Subject
 Commit body
 
 Change-type: patch|minor|major
-Signed-off-by: Fake Name <fakename@resin.io>
+Signed-off-by: Your Name <yourname@resin.io>
 ```
 # Rules
 
@@ -93,7 +97,7 @@ Change-type should follow this exact format (case-sensitive): Change-type: patch
 ## signed-commits
 *Default: true*
 
-Each commit must contain the following footer: Signed-off-by: Full Name <email>
+Each commit must contain the following footer: Signed-off-by: Full Name <email\>
 
 ## signature-last
 *Default: true*
@@ -124,7 +128,6 @@ The commit title should not end with a period
 *Default: true*
 
 The commit subject must not start with a leading space.
-
 Note that if a prefix is supplied a space is expected between the colon and the title
 
 Accepts:
