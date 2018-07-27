@@ -4,5 +4,8 @@ A body which may contain several paragraphs.
 
 It must contain footers separated by a newline
 
+A line may also contain an url,
+in that case those characters do not count towards the maximum length www.aVeryLongUrl.com.
+
 Change-type: minor
 Signed-off-by: foobar <foobar@resin.io>

@@ -14,9 +14,16 @@ const {
 const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
 
 module.exports.bodyLinesMaxLength = (commit) => {
+  // eslint-disable-next-line max-len
+  const excludeURL = /((http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*))/
   _.map(commit.body.split('\n'), (line) => {
     if (line.length > 72) {
-      throw BODY_LINES_MAX_LENGTH
+      const urlChars = excludeURL.exec(line)
+      if (!urlChars || !urlChars[1].length) {
+        throw BODY_LINES_MAX_LENGTH
+      } else if (line.length - urlChars[1].length > 72) {
+        throw BODY_LINES_MAX_LENGTH
+      }
     }
   })
 }
