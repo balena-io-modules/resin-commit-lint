@@ -2,6 +2,7 @@ prefix: prefix
 subject: Subject
 fullTitle: 'prefix: Subject'
 body: |-
+  
   A body which may contain several paragraphs.
 
   It must contain footers separated by a newline
@@ -9,6 +10,7 @@ footers:
 - 'Change-type: minor'
 - 'Signed-off-by: foobar <foobar@resin.io>'
 message: |-
+  
   A body which may contain several paragraphs.
 
   It must contain footers separated by a newline

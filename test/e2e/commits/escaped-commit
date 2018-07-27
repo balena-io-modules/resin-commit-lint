@@ -1,4 +1,5 @@
 prefix: Subject
+
 A body which may contain several paragraphs.
 
 It must contain footers separated by a newline,

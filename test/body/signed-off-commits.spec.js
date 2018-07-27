@@ -13,7 +13,7 @@ const noNameFooter = {
 const noSignatureFooter = {
   footers: [ 'Another-footer: foo' ]
 }
-const runTest = (test) => rules.signedCommits(test)
+const runTest = (test) => rules.signedOffCommits(test)
 
 ava.test('signed-commits: should accept valid footers', (test) => {
   test.notThrows(() => runTest(validFooter))

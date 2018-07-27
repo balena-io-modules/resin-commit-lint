@@ -69,20 +69,15 @@ Signed-off-by: Your Name <yourname@resin.io>
 
 No line in the body should exceed 72 character
 
-## no-tag-in-body
-*Default: true*
+## capitalise-subject
+*Default: with-prefix*
 
-Commit body should not contain footer tags
+The commit subject must start with a capital letter
 
-## no-whitespace-in-prefix
-*Default: true*
-
-Prefix should not contain any whitespace
-
-## proper-paragraphs
-*Default: true*
-
-The first letter of any paragraph should be capitalised
+Accepts the following values:
+- *never*: Rule is never applied
+- *always*: Rule is always applied
+- *with-prefix*: Rule is only applied if a prefix is found
 
 ## change-type
 *Default: false*
@@ -94,35 +89,15 @@ Each commit must contain the following footer: Change-type: patch|minor|major
 
 Change-type should follow this exact format (case-sensitive): Change-type: patch|minor|major
 
-## signed-commits
+## imperative-mood
 *Default: true*
 
-Each commit must contain the following footer: Signed-off-by: Full Name <email\>
+The commit subject must use the imperative mood
 
-## signature-last
+## newline-before-body
 *Default: true*
 
-Signed-off-by must be the last tag appearing in the footers
-
-## title-max-length
-*Default: true*
-
-The commit title should not exceed 72 characters
-
-## capitalise-subject
-*Default: with-prefix*
-
-The commit subject must start with a capital letter
-
-Accepts the following values:
-- *never*: Rule is never applied
-- *always*: Rule is always applied
-- *with-prefix*: Rule is only applied if a prefix is found
-
-## no-period
-*Default: true*
-
-The commit title should not end with a period
+The body must be separeted from title by a newline
 
 ## no-leading-space-in-subject
 *Default: true*
@@ -148,13 +123,43 @@ prefix:  subject
  subject
 ```
 
-## imperative-mood
+## no-period
 *Default: true*
 
-The commit subject must use the imperative mood
+The commit title should not end with a period
+
+## no-tag-in-body
+*Default: true*
+
+Commit body should not contain footer tags
+
+## no-whitespace-in-prefix
+*Default: true*
+
+Prefix should not contain any whitespace
 
 ## pretty-tags
 *Default: true*
 
 Tag names must start with a capital letter, only letters and '-' are allowed
+
+## proper-paragraphs
+*Default: true*
+
+The first letter of any paragraph should be capitalised
+
+## signature-last
+*Default: false*
+
+Signed-off-by must be the last tag appearing in the footers
+
+## signed-off-commits
+*Default: true*
+
+Each commit must contain the following footer: Signed-off-by: Full Name <email\>
+
+## title-max-length
+*Default: true*
+
+The commit title should not exceed 72 characters
 

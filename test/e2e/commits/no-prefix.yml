@@ -10,5 +10,5 @@ message: |-
   Footer: foo
 
 errors:
-- 'Signed-off-by must be the last tag appearing in the footers'
+- 'The body must be separeted from title by a newline'
 - 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'
