@@ -67,7 +67,9 @@ Signed-off-by: Your Name <yourname@resin.io>
 ## body-lines-max-length
 *Default: true*
 
-No line in the body should exceed 72 character
+No line in the body should exceed 72 character.
+If a line contains a URL, the characters in the URL do not
+count towards the allowed maximum.
 
 ## capitalise-subject
 *Default: with-prefix*
