@@ -65,14 +65,14 @@ Signed-off-by: Your Name <yourname@resin.io>
 # Rules
 
 ## body-lines-max-length
-*Default: true*
+*Default: false*
 
 No line in the body should exceed 72 character.
 If a line contains a URL, the characters in the URL do not
 count towards the allowed maximum.
 
 ## capitalise-subject
-*Default: with-prefix*
+*Default: false*
 
 The commit subject must start with a capital letter
 
@@ -89,12 +89,12 @@ The meanings of patch, minor and major follow the [Semantic Versioning spec](htt
 and this definition may be used to automatically update the version in the CHANGELOG file.
 
 ## change-type-fixed-spelling
-*Default: true*
+*Default: false*
 
 Change-type should follow this exact format (case-sensitive): Change-type: patch|minor|major
 
 ## imperative-mood
-*Default: true*
+*Default: false*
 
 The commit subject must use the imperative mood
 
@@ -128,7 +128,7 @@ prefix:  subject
 ```
 
 ## no-period
-*Default: true*
+*Default: false*
 
 The commit title should not end with a period
 
@@ -138,7 +138,7 @@ The commit title should not end with a period
 Commit body should not contain footer tags
 
 ## no-whitespace-in-prefix
-*Default: true*
+*Default: false*
 
 Prefix should not contain any whitespace
 
@@ -148,7 +148,7 @@ Prefix should not contain any whitespace
 Tag names must start with a capital letter, only letters and '-' are allowed
 
 ## proper-paragraphs
-*Default: true*
+*Default: false*
 
 The first letter of any paragraph should be capitalised
 
@@ -158,7 +158,7 @@ The first letter of any paragraph should be capitalised
 Signed-off-by must be the last tag appearing in the footers
 
 ## signed-off-commits
-*Default: true*
+*Default: false*
 
 Each commit must contain the following footer: Signed-off-by: Full Name <email\>  
 By signing off a commit, a developer is certifying the statements of the
@@ -166,7 +166,7 @@ By signing off a commit, a developer is certifying the statements of the
 it is applicable (for example, a contribution to an open source project or package).
 
 ## title-max-length
-*Default: true*
+*Default: false*
 
 The commit title should not exceed 72 characters
 

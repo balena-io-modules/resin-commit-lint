@@ -1,17 +1,17 @@
 {
-  "body-lines-max-length": true,
-  "capitalise-subject": "with-prefix",
+  "body-lines-max-length": false,
+  "capitalise-subject": false,
   "change-type": false,
-  "change-type-fixed-spelling": true,
-  "imperative-mood": true,
+  "change-type-fixed-spelling": false,
+  "imperative-mood": false,
   "newline-before-body": true,
   "no-leading-space-in-subject": true,
-  "no-period": true,
+  "no-period": false,
   "no-tag-in-body": true,
-  "no-whitespace-in-prefix": true,
+  "no-whitespace-in-prefix": false,
   "pretty-tags": true,
-  "proper-paragraphs": true,
+  "proper-paragraphs": false,
   "signature-last": false,
-  "signed-off-commits": true,
-  "title-max-length": true
+  "signed-off-commits": false,
+  "title-max-length": false
 }
