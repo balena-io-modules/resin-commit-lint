@@ -84,7 +84,9 @@ Accepts the following values:
 ## change-type
 *Default: false*
 
-Each commit must contain the following footer: Change-type: patch|minor|major
+Each commit must contain the following footer: Change-type: patch|minor|major  
+The meanings of patch, minor and major follow the [Semantic Versioning spec](https://semver.org/)
+and this definition may be used to automatically update the version in the CHANGELOG file.
 
 ## change-type-fixed-spelling
 *Default: true*
@@ -158,7 +160,10 @@ Signed-off-by must be the last tag appearing in the footers
 ## signed-off-commits
 *Default: true*
 
-Each commit must contain the following footer: Signed-off-by: Full Name <email\>
+Each commit must contain the following footer: Signed-off-by: Full Name <email\>  
+By signing off a commit, a developer is certifying the statements of the
+[Developer Certificate of Origin](https://developercertificate.org/) to the extent that
+it is applicable (for example, a contribution to an open source project or package).
 
 ## title-max-length
 *Default: true*
