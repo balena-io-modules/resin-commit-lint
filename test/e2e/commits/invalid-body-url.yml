@@ -14,4 +14,3 @@ message: |-
 
 errors:
 - 'No line in the body should exceed 72 characters'
-- 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'

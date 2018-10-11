@@ -12,4 +12,3 @@ footers:
 errors:
 - 'The body must be separeted from title by a newline'
 - 'The commit subject must not start with a leading space'
-- 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'

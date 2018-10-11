@@ -11,4 +11,3 @@ message: |-
 
 errors:
 - 'The body must be separeted from title by a newline'
-- 'Each commit must contain the following footer: Signed-off-by: Full Name <email>'
