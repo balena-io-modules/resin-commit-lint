@@ -1,9 +1,9 @@
 # resin-commit-lint
 
 A script to lint commit messages.
-A valid commit starts with the title, which is made of an optional prefix,
-separated from the subject by a colon; the next lines may contain the body of
-the commit followed by the footers.
+A valid commit starts with the title, which is made of an optional prefix, separated from the subject by a colon.
+The body, which may contain a detailed description of your changes, should be separated from the title by an empty line.
+Footers may appear at the end of the commit, separated from the body by a newline.
 
 Scroll to the Rules sections to learn about the specific rules, the default
 configuration can be found [here](https://github.com/resin-io/resin-commit-lint/blob/master/config.json)
@@ -28,6 +28,16 @@ Since the prefix is optional the following is also a valid commit
 subject without prefix
 
 A body
+
+Change-type: minor
+Signed-off-by: Foo Bar <foobar@resin.io>
+```
+
+You can also only add footers, in this case you still need to add the extra empty-line for the (empty) body.
+
+```
+title
+
 
 Change-type: minor
 Signed-off-by: Foo Bar <foobar@resin.io>
@@ -97,11 +107,6 @@ Change-type should follow this exact format (case-sensitive): Change-type: patch
 *Default: false*
 
 The commit subject must use the imperative mood
-
-## newline-before-body
-*Default: true*
-
-The body must be separeted from title by a newline
 
 ## no-leading-space-in-subject
 *Default: true*

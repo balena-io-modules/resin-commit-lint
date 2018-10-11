@@ -1,7 +1,8 @@
 prefix: prefix
 subject: ' subject'
 fullTitle: 'prefix:  subject'
-body: body
+body: |-
+  body
 message: |-
   body
 
@@ -10,5 +11,4 @@ footers:
 - 'Footer: foo'
 
 errors:
-- 'The body must be separeted from title by a newline'
 - 'The commit subject must not start with a leading space'

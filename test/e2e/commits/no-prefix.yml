@@ -1,13 +1,11 @@
 prefix: ''
 subject: 'simple title'
 fullTitle: 'simple title'
-body: body
+body: |-
+  body
 footers:
 - 'Footer: foo'
 message: |-
   body
 
   Footer: foo
-
-errors:
-- 'The body must be separeted from title by a newline'

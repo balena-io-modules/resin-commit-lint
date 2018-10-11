@@ -2,12 +2,10 @@ prefix: ''
 subject: title
 fullTitle: 'title'
 body: |-
-
   A shorter line which contains an URL (https://resin.io/) and is valid
 footers:
 - 'A-footer: foo'
 message: |-
-
   A shorter line which contains an URL (https://resin.io/) and is valid
 
   A-footer: foo

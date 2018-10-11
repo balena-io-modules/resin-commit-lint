@@ -7,8 +7,7 @@ const {
   CHANGE_TYPE,
   SIGNED_OFF_COMMITS,
   SIGNATURE_LAST,
-  CHANGE_TYPE_FIXED_SPELLING,
-  NEWLINE_BEFORE_BODY
+  CHANGE_TYPE_FIXED_SPELLING
 } = require('../lib/errors')
 
 const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
@@ -87,11 +86,5 @@ module.exports.changeTypeFixedSpelling = (commit) => {
     if (!(/^Change-type: (patch|minor|major)$/.test(changeTypeFooter))) {
       throw CHANGE_TYPE_FIXED_SPELLING
     }
-  }
-}
-
-module.exports.newlineBeforeBody = (commit) => {
-  if (commit.body !== '' && commit.body[0] !== '\n') {
-    throw NEWLINE_BEFORE_BODY
   }
 }
