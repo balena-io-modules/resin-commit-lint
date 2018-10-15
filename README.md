@@ -33,16 +33,6 @@ Change-type: minor
 Signed-off-by: Foo Bar <foobar@resin.io>
 ```
 
-You can also only add footers, in this case you still need to add the extra empty-line for the (empty) body.
-
-```
-title
-
-
-Change-type: minor
-Signed-off-by: Foo Bar <foobar@resin.io>
-```
-
 # Usage
 Takes the commit message as input and validates it according to the rules.
 

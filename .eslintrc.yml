@@ -190,9 +190,6 @@ rules:
   line-comment-position:
     - error
     - position: above
-  linebreak-style:
-    - error
-    - unix
   lines-around-comment:
     - error
     - beforeBlockComment: true

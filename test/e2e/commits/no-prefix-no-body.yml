@@ -5,7 +5,6 @@ body: ''
 footers:
 - 'Footer: foo'
 message: |-
-
   Footer: foo
 
 errors:
