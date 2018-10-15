@@ -1,1 +1,6 @@
-throws: 'Expected newline between title and body but end of input found.'
+prefix: ''
+subject: only title in commit
+fullTitle: only title in commit
+body: ''
+footers: []
+message: ''
