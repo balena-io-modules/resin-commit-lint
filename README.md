@@ -130,7 +130,9 @@ The commit title should not end with a period
 ## no-tag-in-body
 *Default: true*
 
-Commit body should not contain footer tags
+Commit body should not contain footer tags.
+This error might also be caused if the first line of the footer is not a tag.
+Refer to [pretty-tags](#pretty-tags) rule for tag formatting.
 
 ## no-whitespace-in-prefix
 *Default: false*
