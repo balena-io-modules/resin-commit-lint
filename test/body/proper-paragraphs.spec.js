@@ -24,9 +24,8 @@ ava.test('proper-paragraphs: should reject invalid body.', (test) => {
   test.is(error.message, errMsg)
 })
 
-ava.test('proper-paragraphs: should reject invalid body.', (test) => {
-  const error = test.throws(() => runTest({
+ava.test('proper-paragraphs: should allow indented lines.', (test) => {
+  test.notThrows(() => runTest({
     body: 'body\n\nA new paragraph\na simple line\n\n\n invalid paragraph'
   }))
-  test.is(error.message, errMsg)
 })

@@ -37,7 +37,7 @@ module.exports.noTagInBody = (commit) => {
 }
 
 module.exports.properParagraphs = (commit) => {
-  if (/\n(\n)+(\s)*[a-z]/g.test(commit.body)) {
+  if (/\n(\n)+[a-z]/g.test(commit.body)) {
     throw PROPER_PARAGRAPHS
   }
 }
