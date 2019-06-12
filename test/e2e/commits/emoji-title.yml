@@ -1,6 +1,6 @@
 prefix: ''
-subject: ': Subject'
-fullTitle: ': Subject'
+subject: ':bug: Subject'
+fullTitle: ':bug: Subject'
 body: Body
 footers:
 - 'Footer: foo'

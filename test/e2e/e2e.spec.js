@@ -32,6 +32,7 @@ _.each(tests, (testName) => {
       const error = test.throws(() => {
         parse(testCase)
       })
+      console.log(testName)
       test.is(error.message, expected.throws)
     } else {
       const parseResult = parse(testCase)
