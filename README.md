@@ -89,7 +89,7 @@ The meanings of patch, minor and major follow the [Semantic Versioning spec](htt
 and this definition may be used to automatically update the version in the CHANGELOG file.
 
 ## change-type-fixed-spelling
-*Default: false*
+*Default: true*
 
 Change-type should follow this exact format (case-sensitive): Change-type: patch|minor|major
 
