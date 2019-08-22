@@ -11,6 +11,8 @@ const {
 } = require('../lib/errors')
 
 const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
+const SIGNED_CHERRY_PICK_REGEX =
+  /^\(cherry\spicked\sfrom\scommit\s[0-9a-z]{7,40}\)$/
 
 module.exports.bodyLinesMaxLength = (commit) => {
   // eslint-disable-next-line max-len
@@ -44,8 +46,10 @@ module.exports.properParagraphs = (commit) => {
 
 module.exports.prettyTags = (commit) => {
   _.map(commit.footers, (footer) => {
-    if (!FOOTER_REGEX.test(footer)) {
-      throw PRETTY_TAGS(footer)
+    if (!SIGNED_CHERRY_PICK_REGEX.test(footer)) {
+      if (!FOOTER_REGEX.test(footer)) {
+        throw PRETTY_TAGS(footer)
+      }
     }
   })
 }

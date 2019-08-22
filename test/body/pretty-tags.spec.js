@@ -7,6 +7,12 @@ const validFooter = {
 const lowercaseFooter = {
   footers: [ 'a-footer: foo' ]
 }
+const cherrypickFooter = {
+  footers: [
+    '(cherry picked from commit f8856ecb1ec21eba9f4a292ca33fbd21de13ac02)',
+    '(cherry picked from commit f8856ec)'
+  ]
+}
 
 const runTest = (test) => rules.prettyTags(test)
 
@@ -21,4 +27,8 @@ ava.test('pretty-tags: should accept valid footers', (test) => {
 ava.test('pretty-tags: should reject invalid footers.', (test) => {
   const error = test.throws(() => runTest(lowercaseFooter))
   test.is(error.message, footerErr('a-footer: foo'))
+})
+
+ava.test('pretty-tags: should accept signed cherry pick commits', (test) => {
+  test.notThrows(() => runTest(cherrypickFooter))
 })
