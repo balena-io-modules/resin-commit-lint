@@ -1,0 +1,10 @@
+prefix: ''
+subject: 'Subject'
+fullTitle: 'Subject'
+body: Body
+footers:
+- 'Footer: foo'
+message: |-
+  Body
+
+  Footer: foo
