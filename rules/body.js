@@ -10,7 +10,7 @@ const {
   CHANGE_TYPE_FIXED_SPELLING
 } = require('../lib/errors')
 
-const FOOTER_REGEX = /^([A-Z](\w|-)*): (.+)$/
+const FOOTER_REGEX = /^[A-Z]([a-z]*)((-[a-z]+)*): (.+)$/
 
 module.exports.bodyLinesMaxLength = (commit) => {
   // eslint-disable-next-line max-len
