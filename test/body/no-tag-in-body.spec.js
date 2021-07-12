@@ -7,6 +7,9 @@ const validBodyLowercase = {
 const validBodyUppercase = {
   body: 'body\nmore body Example: foo'
 }
+const validBodyAllCaps = {
+  body: 'body\nEXAMPLE: foo'
+}
 const invalidBody = {
   body: 'body\nExample: foo'
 }
@@ -18,6 +21,10 @@ ava.test('no-tag-in-body: should accept valid body', (test) => {
 
 ava.test('no-tag-in-body: should accept valid body', (test) => {
   test.notThrows(() => runTest(validBodyUppercase))
+})
+
+ava.test('no-tag-in-body: should accept valid body', (test) => {
+  test.notThrows(() => runTest(validBodyAllCaps))
 })
 
 ava.test('no-tag-in-body: should reject invalid body.', (test) => {
