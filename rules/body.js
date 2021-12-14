@@ -36,6 +36,10 @@ module.exports.noTagInBody = (commit) => {
   })
 }
 
+module.exports.validFooterTags = (commit, rules) => {
+  // Noop; we just need to pass this rule configuration into the parser
+}
+
 module.exports.properParagraphs = (commit) => {
   if (/\n(\n)+(\s)*[a-z]/g.test(commit.body)) {
     throw PROPER_PARAGRAPHS

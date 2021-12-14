@@ -15,7 +15,7 @@ const {
 const parseAndRun = (params, options, done) => {
   let commit = {}
   try {
-    commit = parse(params['commit-message'])
+    commit = parse(params['commit-message'], options)
   } catch (err) {
     return done([ err ])
   }

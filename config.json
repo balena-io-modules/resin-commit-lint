@@ -12,5 +12,9 @@
   "proper-paragraphs": false,
   "signature-last": false,
   "signed-off-commits": false,
-  "title-max-length": false
+  "title-max-length": false,
+  "valid-footer-tags": [
+    "Signed-off-by",
+    "Change-type"
+  ]
 }
