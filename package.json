@@ -1,6 +1,6 @@
 {
   "name": "resin-commit-linter",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -34,6 +34,6 @@
     "jsdoc-to-markdown": "^4.0.1"
   },
   "versionist": {
-    "publishedAt": "2021-07-12T14:55:35.001Z"
+    "publishedAt": "2021-12-14T15:15:56.649Z"
   }
 }
