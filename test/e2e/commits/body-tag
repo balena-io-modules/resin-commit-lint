@@ -1,0 +1,6 @@
+prefix: Subject
+
+Body: Text
+
+Change-type: minor
+Signed-off-by: foobar <foobar@resin.io>
