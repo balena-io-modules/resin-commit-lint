@@ -1,0 +1,12 @@
+body: 'Body: Text'
+footers:
+  - 'Change-type: minor'
+  - 'Signed-off-by: foobar <foobar@resin.io>'
+fullTitle: 'prefix: Subject'
+message: |-
+  Body: Text
+
+  Change-type: minor
+  Signed-off-by: foobar <foobar@resin.io>
+prefix: 'prefix'
+subject: 'Subject'
