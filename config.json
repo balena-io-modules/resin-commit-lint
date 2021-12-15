@@ -14,7 +14,9 @@
   "signed-off-commits": false,
   "title-max-length": false,
   "valid-footer-tags": [
-    "Signed-off-by",
-    "Change-type"
+    "^[Ss]igned-[Oo]ff-[Bb]y:",
+    "^[Cc]hange-[Tt]ype: (major|minor|patch)$",
+    "^[Cc]onnects-[Tt]o:",
+    "^[Cc]hangelog-[Ee]ntry:"
   ]
 }
