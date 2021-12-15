@@ -12,5 +12,11 @@
   "proper-paragraphs": false,
   "signature-last": false,
   "signed-off-commits": false,
-  "title-max-length": false
+  "title-max-length": false,
+  "valid-footer-tags": [
+    "^[Ss]igned-[Oo]ff-[Bb]y:",
+    "^[Cc]hange-[Tt]ype: (major|minor|patch)$",
+    "^[Cc]onnects-[Tt]o:",
+    "^[Cc]hangelog-[Ee]ntry:"
+  ]
 }

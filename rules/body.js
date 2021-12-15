@@ -28,11 +28,17 @@ module.exports.bodyLinesMaxLength = (commit) => {
 }
 
 module.exports.noTagInBody = (commit) => {
+  console.warn('deprecated rule')
+}
+
+module.exports.validFooterTags = (commit, rules) => {
   const bodyLines = commit.body.split('\n')
   _.map(bodyLines, (line) => {
-    if (FOOTER_REGEX.test(line)) {
-      throw NO_TAG_IN_BODY
-    }
+    _.each(rules, (rule) => {
+      if ((new RegExp(rule)).test(line)) {
+        throw NO_TAG_IN_BODY
+      }
+    })
   })
 }
 

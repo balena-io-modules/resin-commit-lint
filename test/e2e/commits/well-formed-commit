@@ -7,5 +7,7 @@ It must contain footers separated by a newline
 A line may also contain an url,
 in that case those characters do not count towards the maximum length www.aVeryLongUrl.com.
 
+NOTE: this is an important message, which should not be detected as a footer
+
 Change-type: minor
 Signed-off-by: foobar <foobar@resin.io>
