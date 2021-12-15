@@ -37,7 +37,14 @@ module.exports.noTagInBody = (commit) => {
 }
 
 module.exports.validFooterTags = (commit, rules) => {
-  // Noop; we just need to pass this rule configuration into the parser
+  const bodyLines = commit.body.split('\n')
+  _.map(bodyLines, (line) => {
+    _.each(rules, (rule) => {
+      if ((new RegExp(rule)).test(line)) {
+        throw NO_TAG_IN_BODY
+      }
+    })
+  })
 }
 
 module.exports.properParagraphs = (commit) => {
